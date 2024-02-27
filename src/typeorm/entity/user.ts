@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
 @Entity({name:'user'}) // Table Name
@@ -10,9 +10,12 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
         @Column()
         password:string
         @Column()
+        @CreateDateColumn()
         createdAt:Date;
-        @Column({nullable:true})
-        authstrategy:string
-
-
+        @Column()
+        @UpdateDateColumn()
+        updatedAt: Date;
+        @Column()
+        @DeleteDateColumn()
+        deltedAt: Date;
    }
